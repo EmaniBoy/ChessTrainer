@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "AI Chess Trainer",
+    "version": "1.0",
+    "description": "Provides real-time AI commentary for your Chess.com games.",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "*://*.chess.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.chess.com/*"],
+        "js": ["content-script.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": "assets/icon.png",
+      "default_popup": "sidebar/sidebar.html"
+    }
+  }
+  
